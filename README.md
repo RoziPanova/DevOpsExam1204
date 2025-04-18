@@ -1,6 +1,6 @@
 # 🎀 SoftUni DevOps 🎀
 
-> 🌸 *A SoftUni DevOps course I graduated in 2025.*
+> 🌸 *A SoftUni DevOps course I took in 2025.*
 
 ---
 
