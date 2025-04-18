@@ -1,0 +1,5 @@
+resource_group_name     = "SeminarHubRG"
+resource_group_location = "North Europe"
+app_service_plan_name   = "SeminarHubPlan"
+app_service_name        = "SeminarHubApp"
+sql_server_name         = "sqlserver"

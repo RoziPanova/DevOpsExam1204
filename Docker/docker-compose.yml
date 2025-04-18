@@ -1,0 +1,41 @@
+services:
+    mongo:
+        networks:
+            - shoppinglist
+        container_name: mongodb
+        volumes:
+            - data:/data/db
+        environment:
+            - MONGO_INITDB_ROOT_USERNAME=mongoadmin
+            - MONGO_INITDB_ROOT_PASSWORD=secret
+        image: mongo
+    backend:
+        ports:
+            - 80:80
+        container_name: backend
+        volumes:
+            - logs:/app/logs
+            - node_modules:/app/node_modules
+            - ./frontend/src:/app/src
+        networks:
+            - shoppinglist
+        image: rozipanova/backend
+    frontend:
+        ports:
+            - 3000:3000
+        container_name: frontend
+        volumes:
+            - ./frontend/src:/app/src
+        networks:
+            - shoppinglist
+        image: rozipanova/frontend
+networks:
+    shoppinglist:
+        name: shoppinglist
+volumes:
+    data:
+        name: data
+    logs:
+        name: logs
+    node_modules:
+        name: node_modules

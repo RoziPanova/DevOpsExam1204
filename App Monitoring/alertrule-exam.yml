@@ -1,0 +1,10 @@
+groups:
+  - name: Connection duration alert
+    rules:
+      - alert: ConnectionOver1ms
+        expr: probe_http_duration_seconds > 0.05
+        for: 5s
+        labels:
+          severity: critical
+        annotations:
+          summary: "HTTP duration went over 1s"
